@@ -1,0 +1,10 @@
+button:active {
+  background-color: blue !important;
+}
+button:not(:active) {
+  background-color: yellow;
+}
+
+.invisible {
+  visibility: hidden;
+}

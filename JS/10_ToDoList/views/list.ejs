@@ -1,0 +1,57 @@
+<%- include("header") %>
+
+    <div class="box" id="heading">
+        <h1>
+            <%=modeTitle%>
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="box menu">
+            <form id="modeForm" method="post" action="/modeSubmit">
+                <%for (var i=0; i<modesTitles.length; i++){%>
+                    <div class="item">
+                        <input id="<%=modesIds[i]%>" name="modeTitle" type="radio" value="<%=modesTitles[i]%>">
+                        <p>
+                            <%=modesTitles[i]%>
+                        </p>
+                    </div>
+                    <%}%>
+            </form>
+            <form class="item" action="/newMode" method="post">
+                <input type="text" name="newMode" placeholder="New Mode">
+                <button type="submit" name="button" value="<%=modeTitle%>">+</button>
+            </form>
+            <script>
+                const form = document.querySelector('#modeForm');
+                const radioButtons = document.querySelectorAll('input[name="modeTitle"]');
+
+                radioButtons.forEach(radioButton => {
+                    radioButton.addEventListener('change', () => {
+                        form.submit();
+                    });
+                });
+
+                const option = document.querySelector("#<%=modeId%>");
+                option.checked = true;
+            </script>
+        </div>
+        <div class="content">
+            <div class="box">
+                <%for (var i=0; i<modeItems.length; i++){%>
+                    <div class="item">
+                        <input type="checkbox">
+                        <p>
+                            <%=modeItems[i]%>
+                        </p>
+                    </div>
+                    <%}%>
+
+                        <form class="item" action="/" method="post">
+                            <input type="text" name="newItem" placeholder="New Item">
+                            <button type="submit" name="button" value="<%=modeTitle%>">+</button>
+                        </form>
+            </div>
+        </div>
+    </div>
+    <%- include("footer")%>

@@ -1,0 +1,28 @@
+h1,
+h2 {
+  color: blueviolet;
+}
+
+/* Child (p) = Apply to direct child of left side */
+.box > p {
+  color: firebrick;
+}
+
+/* Descendant (li) = Apply to a descendant of left side (box) */
+.box li {
+  color: blue;
+}
+
+#second {
+  font-style: italic;
+}
+
+/* Chaining = Apply where all selectors are true */
+li.done#second {
+  color: seagreen;
+}
+
+/* Descendandt + Chaining */
+ul p.done {
+  font-family: fantasy;
+}

@@ -1,0 +1,22 @@
+div {
+  height: 200px;
+  width: 200px;
+}
+
+p {
+  margin: 0;
+}
+
+#first {
+  background-color: red;
+  margin-left: 20px;
+  border: 20px solid black;
+  padding: 20px;
+}
+
+#second {
+  background-color: green;
+  margin-left: 300px;
+  border: solid black;
+  border-width: 10px 20px;
+}
